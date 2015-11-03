@@ -58,18 +58,18 @@ public class FIR_Integral {
 		PdsFir filtro2 = new PdsFir(conf);
 		PdsFir filtro3 = new PdsFir(conf);
 		
-		PdsReadData fd1=new PdsReadData(""/*caminho a ser lido*/);
-		PdsWriteData fd2=new PdsWriteData(""/*caminho onde vai salvar*/);
-		PdsWriteData fd3=new PdsWriteData(""/*caminho onde vai salvar*/);
-		PdsWriteData fd4=new PdsWriteData(""/*caminho onde vai salvar*/);
-		PdsWriteData fd5=new PdsWriteData(""/*caminho onde vai salvar*/);
-		PdsWriteData fd6=new PdsWriteData(""/*caminho onde vai salvar*/);
-		
+		PdsReadData fd1=new PdsReadData("C:\\Users\\Eduardo\\Desktop\\Diversos\\UFLA\\Mestrado\\Dados TXT\\SalidaActivity.txt");
+		PdsWriteData fd2=new PdsWriteData("C:\\Users\\Eduardo\\Desktop\\Diversos\\UFLA\\Mestrado\\Dados TXT\\Gerados\\Atividade\\AceleracaoFiltrada_Atividade.txt"/*caminho onde vai salvar*/);
+		PdsWriteData fd3=new PdsWriteData("C:\\Users\\Eduardo\\Desktop\\Diversos\\UFLA\\Mestrado\\Dados TXT\\Gerados\\Atividade\\Velocidade_Atividade.txt"/*caminho onde vai salvar*/);
+		PdsWriteData fd4=new PdsWriteData("C:\\Users\\Eduardo\\Desktop\\Diversos\\UFLA\\Mestrado\\Dados TXT\\Gerados\\Atividade\\VelocidadeFiltrada_Atividade.txt"/*caminho onde vai salvar*/);
+		PdsWriteData fd5=new PdsWriteData("C:\\Users\\Eduardo\\Desktop\\Diversos\\UFLA\\Mestrado\\Dados TXT\\Gerados\\Atividade\\Deslocamento_Atividade.txt"/*caminho onde vai salvar*/);
+		PdsWriteData fd6=new PdsWriteData("C:\\Users\\Eduardo\\Desktop\\Diversos\\UFLA\\Mestrado\\Dados TXT\\Gerados\\Atividade\\DeslocamentoFiltrado_Atividade.txt"/*caminho onde vai salvar*/);
+		PdsWriteData fd7=new PdsWriteData("C:\\Users\\Eduardo\\Desktop\\Diversos\\UFLA\\Mestrado\\Dados TXT\\Gerados\\Atividade\\Aceleracao_Atividade.txt"/*caminho onde vai salvar*/);
 		
 		double a,t;
 		double af,vi,vif,di,dif;
 		
-		for(int i=0;i<5;i++) //i < ? Alterar o valor de i para o número de linhas do arquivo que vai ser lido
+		for(int i=0;i<3000;i++) //i < ? Alterar o valor de i para o número de linhas do arquivo que vai ser lido
 		{
 			String s=fd1.Scan();
 			Scanner scanner = new Scanner (s);
@@ -91,14 +91,24 @@ public class FIR_Integral {
 			fd4.Println(t+"\t"+vif);
 			fd5.Println(t+"\t"+di);
 			fd6.Println(t+"\t"+dif);
+			fd7.Println(t+"\t"+a);
 			
+			System.out.println("Tempo lido:"+t);
+			System.out.println("Aceleração lida:"+a);
 			System.out.println("a_filtrada:"+af);
 			System.out.println("v:"+vi);
 			System.out.println("v_filtrada:"+vif);
 			System.out.println("d:"+di);
 			System.out.println("d_filtrado:"+dif);
+			
 		}
+		
 		fd2.Close();
+		fd3.Close();
+		fd4.Close();
+		fd5.Close();
+		fd6.Close();
+		fd7.Close();
 	}
 		
 
