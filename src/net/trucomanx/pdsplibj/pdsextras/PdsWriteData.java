@@ -51,7 +51,7 @@ public class PdsWriteData
 					e.printStackTrace();
 		}
 	}
-	
+
 	public void Println(String cadena){
 		try{
 			this.pw.println(cadena);

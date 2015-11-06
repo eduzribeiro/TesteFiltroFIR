@@ -111,6 +111,18 @@ public class PdsPoints{
 	{
 		P[id].setLocation(x,y);
 	}	
+
+	public void set_arrays(double val0[],double val1[])
+	{
+		
+		for(int i=0;i<Nel;i++)
+		{
+			if(P[i]!=null)
+			{
+				P[i].setLocation(val0[i],val1[i]);
+			}
+		}
+	}
 	////////////////////////////////////////////////////////////////////
 	// P e P2 devem ter a mesma quantidade de pontos.
 	// Retorna un nuevo P[i]-P2[i]  ate onde sea possibleseguindo i.
@@ -155,11 +167,21 @@ public class PdsPoints{
 	
 	public String toString()
 	{
-		String S="";
+		String S="\n";
 		for(int i=0;i<Nel;i++)
-		{
-			S=S	+"("+	get_point_from_id(i).getX()+ 	","+
-						get_point_from_id(i).getY()+	")\n";
+		{	
+			if(get_point_from_id(i)!=null)
+			{
+				S=S	+"("+	get_point_from_id(i).getX()+ 	","+
+							get_point_from_id(i).getY()+	")";
+			}
+			else
+			{
+				S=S+"NULL";
+			}
+	
+			if(i!=(Nel-1))	S=S+"\t";
+			else			S=S+"\n";
 		}
 		return S;
 	}	

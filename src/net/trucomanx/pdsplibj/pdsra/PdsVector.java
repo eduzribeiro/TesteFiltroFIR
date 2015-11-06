@@ -18,6 +18,8 @@
 package net.trucomanx.pdsplibj.pdsra;
 
 import java.lang.*;
+import java.util.*;
+import java.io.*;
 
 /** 
  * Esta classe implementa um vetor real com N elementos.
@@ -70,6 +72,44 @@ public class PdsVector {
 		else{
 			this.Nel = 0;
 			this.V=null;	
+		}
+	}
+
+
+	/**
+	 * Este construtor da classe é necessário inicializar-lo o nome de um arquivo.
+	 * 
+	 * @param datafile É nome do arquivo com os dados do vetor de fonte.
+	 **/
+	public PdsVector(String datafile) {
+
+		List<Double> list = new ArrayList<Double>();
+		Scanner scanner = null;
+
+		try{
+			scanner = new Scanner(new File(datafile));
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+
+		while (scanner.hasNext()) 
+		{
+
+			list.add(Double.parseDouble(scanner.next()));
+
+		}
+
+
+		this.Nel = list.size();
+		this.V=new double[this.Nel];
+		
+		if(this.V==null)	this.Nel = 0;
+		else
+		{
+			for(int i=0; i<this.Nel;i++)
+				this.V[i]=list.get(i);
 		}
 	}
 

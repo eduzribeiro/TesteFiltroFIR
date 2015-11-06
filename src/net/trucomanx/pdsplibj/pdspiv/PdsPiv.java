@@ -106,20 +106,27 @@ public class PdsPiv{
 		for(int i=0;i<N;i++)
 		{
 			p1=P1.get_point_from_id(i);// retorna referencia ao ponto
-			p2=tracking_point(p1,Conf);
-			if (p2==null)
-				P2.nullifies_the_point(i);
-			else
-				P2.set_point(i,p2);
-				
-			if(flag==true)	
-			{
-				if((i+1)!=N)
-				System.out.print("Analyzing the point "+(i+1)+"/"+N+"     \r");
-				else
-				System.out.print("Analyzing the point "+(i+1)+"/"+N+"     \n");
-			}
 			
+			if(p1!=null)
+			{
+				p2=tracking_point(p1,Conf);
+				if (p2==null)
+					P2.nullifies_the_point(i);
+				else
+					P2.set_point(i,p2);
+				
+				if(flag==true)	
+				{
+					if((i+1)!=N)
+					System.out.print("Analyzing the point "+(i+1)+"/"+N+"     \r");
+					else
+					System.out.print("Analyzing the point "+(i+1)+"/"+N+"     \n");
+				}
+			}
+			else
+			{
+				P2.nullifies_the_point(i);
+			}
 		}
 
 		return P2;
