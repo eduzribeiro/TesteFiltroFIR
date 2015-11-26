@@ -22,7 +22,7 @@ public class FIR_Integral2 {
 		
 		PdsVector H = new PdsVector("../data/ValoresH.dat");
 
-		PdsFir filtro1 = new PdsFir(1);//H);
+		PdsFir filtro1 = new PdsFir(H);
 		PdsFir filtro2 = new PdsFir(1);//H);
 		PdsFir filtro3 = new PdsFir(1);//H);
 		

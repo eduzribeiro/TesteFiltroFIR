@@ -21,10 +21,10 @@ grid on
 
 %axis([40,110,-0.15,0.20])
 
-legend('Não Filtrado','Filtrado',0)
+legend('NÃ£o Filtrado','Filtrado',0)
 
-title('Velocidade Atividade Não Filtrado X Filtrado')
+title('Velocidade Atividade NÃ£o Filtrado X Filtrado')
 
 xlabel('Tempo')
 
-ylabel('Medições')
+ylabel('MediÃ§Ãµes')

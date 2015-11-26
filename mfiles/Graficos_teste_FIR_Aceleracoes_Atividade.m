@@ -18,10 +18,10 @@ grid on
 
 %axis([140,210,-8.5,8])
 
-legend('Não Filtrada','Filtrada',0)
+legend('NÃ£o Filtrada','Filtrada',0)
 
-title('Acelarações Atividade Não Filtradas X Filtradas')
+title('AcelaraÃ§Ãµes Atividade NÃ£o Filtradas X Filtradas')
 
 xlabel('Tempo')
 
-ylabel('Medições')
+ylabel('MediÃ§Ãµes')

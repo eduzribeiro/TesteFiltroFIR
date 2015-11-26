@@ -18,10 +18,10 @@ grid on
 
 %axis([40,110,-0.15,0.20])
 
-legend('Não Filtrado','Referência','Filtrado',0)
+legend('NÃ£o Filtrado','ReferÃªncia','Filtrado',0)
 
-title('Deslocamento Repouso Não Filtrado X Filtrado')
+title('Deslocamento Repouso NÃ£o Filtrado X Filtrado')
 
 xlabel('Tempo')
 
-ylabel('Medições')
+ylabel('MediÃ§Ãµes')
