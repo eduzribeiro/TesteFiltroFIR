@@ -68,12 +68,13 @@ public class PdsFir {
 	private PdsFifoValue X;
 
 	/**
-	 * Este é o construtor da classe PdsFir
+	 * Este é o construtor da classe PdsFir.
 	 *
-	 * O filtro inicialmente tem  H[0]=1 e o resto de H[m] com zero, de jeito que o filtro não
+	 * Usando este contrutor o filtro inicialmente tem  
+	 * H[0]=1 e o resto de H[m] com zero, de jeito que o filtro não
 	 * filtra, só deixa passar tudo sem alterar a informação.
 	 *
-	 * @param M É o ordem do filtro: Y[n]=X[n]*H[0] + X[n-1]*H[1] + ... + X[n-M]*H[M]
+	 * @param M É o ordem do filtro: {@latex.inline $Y[n]=X[n]*H[0] + X[n-1]*H[1] + ... + X[n-M]*H[M]$}
 	 **/
 	public PdsFir(int M) {
 		this.M = M;
@@ -83,11 +84,11 @@ public class PdsFir {
 	}
 	
 	/**
-	 * Este é o construtor da classe PdsFir
+	 * Este é o construtor da classe PdsFir.
 	 *
-	 * O filtro é iniciado com o vetor H.
+	 * Usando este construtor o filtro é iniciado com o vetor H.
 	 *
-	 * @param H É um vetor com os valores de H[i] em: Y[n]=X[n]*H[0] + X[n-1]*H[1] + ... + X[n-M]*H[M]
+	 * @param H É um vetor com os valores de H[i] em: {@latex.inline $Y[n]=X[n]*H[0] + X[n-1]*H[1] + ... + X[n-M]*H[M]$}
 	 **/
 	public PdsFir(PdsVector H) {
 		this.M = H.GetNelements()-1;

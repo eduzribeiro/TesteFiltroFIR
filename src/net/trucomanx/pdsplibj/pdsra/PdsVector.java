@@ -77,7 +77,8 @@ public class PdsVector {
 
 
 	/**
-	 * Este construtor da classe é necessário inicializar-lo o nome de um arquivo.
+	 * Este construtor da classe é necessário inicializar-lo com um nome de arquivo
+	 * com os dados do vetor.
 	 * 
 	 * @param datafile É nome do arquivo com os dados do vetor de fonte.
 	 **/

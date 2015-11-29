@@ -3,6 +3,8 @@ import java.util.Scanner;
 
 import net.trucomanx.pdsplibj.pdsdf.PdsFir;
 import net.trucomanx.pdsplibj.pdsextras.*;
+import net.trucomanx.pdsplibj.pdscalc.*;
+import net.trucomanx.pdsplibj.pdsds.*;
 import net.trucomanx.pdsplibj.pdsra.PdsVector;
 
 /*
@@ -15,24 +17,24 @@ public class FIR_Integral2 {
 
 	public static void main(String[] args) {
 		
-		Quantizer Q=new Quantizer(-5.70026986e-03, 3*4.82532766e-02);
+		PdsQuantizer Q=new PdsQuantizer(-5.70026986e-03, 3*4.82532766e-02);
 
-		Integral Int1=new Integral(2.0);
-		Integral Int2=new Integral();
+		PdsIntegrator Int1=new PdsIntegrator(2.0);
+		PdsIntegrator Int2=new PdsIntegrator();
 		
-		PdsVector H = new PdsVector("../data/ValoresH.dat");
+		PdsVector H = new PdsVector("../data/params/ValoresH.dat");
 
 		PdsFir filtro1 = new PdsFir(H);
 		PdsFir filtro2 = new PdsFir(1);//H);
 		PdsFir filtro3 = new PdsFir(1);//H);
 		
-		PdsReadData  fd1=new PdsReadData("../data/SalidaNoAtividade.dat");
-		PdsWriteData fd2=new PdsWriteData("../data/Gerados/Repouso/AceleracaoFiltrada_Repouso.txt");	/*caminho onde vai salvar*/
-		PdsWriteData fd3=new PdsWriteData("../data/Gerados/Repouso/Velocidade_Repouso.txt");			/*caminho onde vai salvar*/
-		PdsWriteData fd4=new PdsWriteData("../data/Gerados/Repouso/VelocidadeFiltrada_Repouso.txt");	/*caminho onde vai salvar*/
-		PdsWriteData fd5=new PdsWriteData("../data/Gerados/Repouso/Deslocamento_Repouso.txt");			/*caminho onde vai salvar*/
-		PdsWriteData fd6=new PdsWriteData("../data/Gerados/Repouso/DeslocamentoFiltrada_Repouso.txt");	/*caminho onde vai salvar*/
-		PdsWriteData fd7=new PdsWriteData("../data/Gerados/Repouso/Aceleracao_Repouso.txt");			/*caminho onde vai salvar*/
+		PdsReadData  fd1=new PdsReadData("../data/data_from_cell/random_activity/SalidaNoAtividade.dat");
+		PdsWriteData fd2=new PdsWriteData("../data/Gerados/random_activity/AceleracaoFiltrada_Repouso.txt");	/*caminho onde vai salvar*/
+		PdsWriteData fd3=new PdsWriteData("../data/Gerados/random_activity/Velocidade_Repouso.txt");			/*caminho onde vai salvar*/
+		PdsWriteData fd4=new PdsWriteData("../data/Gerados/random_activity/VelocidadeFiltrada_Repouso.txt");	/*caminho onde vai salvar*/
+		PdsWriteData fd5=new PdsWriteData("../data/Gerados/random_activity/Deslocamento_Repouso.txt");			/*caminho onde vai salvar*/
+		PdsWriteData fd6=new PdsWriteData("../data/Gerados/random_activity/DeslocamentoFiltrada_Repouso.txt");	/*caminho onde vai salvar*/
+		PdsWriteData fd7=new PdsWriteData("../data/Gerados/random_activity/Aceleracao_Repouso.txt");			/*caminho onde vai salvar*/
 		
 		double a,t;
 		double ai,af,vi,vif,di,dif;

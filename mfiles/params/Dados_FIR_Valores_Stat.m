@@ -1,5 +1,5 @@
 %
-Data  = load('../../data/SalidaNoAtividade.dat');
+Data  = load('../../data/data_from_cell/random_activity/SalidaNoAtividade.dat');
 
 T  = Data(:,1);
 Ax = Data(:,2);
@@ -17,14 +17,14 @@ stdZ=std(Az);
 
 D=[ meanX stdX ]
 
-save('../../data/ValoresStatX.dat','D','-ascii')
+save('../../data/params/ValoresStatX.dat','D','-ascii')
 
 
 D=[ meanY stdY ]
 
-save('../../data/ValoresStatY.dat','D','-ascii')
+save('../../data/params/ValoresStatY.dat','D','-ascii')
 
 
 D=[ meanZ stdZ ]
 
-save('../../data/ValoresStatZ.dat','D','-ascii')
+save('../../data/params/ValoresStatZ.dat','D','-ascii')
