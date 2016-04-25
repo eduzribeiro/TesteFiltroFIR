@@ -1,9 +1,7 @@
 %
-
 Acel = load('../../data/Gerados/caminando/AceleracaoFiltrada_caminando.txt');
 Velo = load('../../data/Gerados/caminando/VelocidadeFiltrada_caminando.txt');
 Desl = load('../../data/Gerados/caminando/DeslocamentoFiltrada_caminando.txt');
-
 
 ta = Acel(:,1);
 a  = Acel(:,2);
